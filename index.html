@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ultimate Chat App</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container" role="main" aria-label="Chat application">
+    <header class="chat-header">
+      <h1>🗨️ Chat</h1>
+      <nav class="header-buttons" role="navigation" aria-label="Chat controls">
+        <button id="emojiBtn" aria-label="Toggle emoji picker">😊</button>
+        <button id="stickerBtn" aria-label="Toggle sticker picker">🏷️</button>
+        <button id="imageBtn" aria-label="Send image">🖼️</button>
+        <button id="exportBtn" aria-label="Export chat history">📄</button>
+        <button id="clearBtn" aria-label="Clear chat history">🗑️</button>
+        <button id="themeToggleBtn" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </header>
+
+    <section id="chatBox" class="chat-box" role="log" aria-live="polite" aria-relevant="additions"></section>
+
+    <div class="typing" id="typingIndicator" aria-live="assertive" aria-atomic="true" role="status" hidden>
+      🤖 Bot is typing<span id="typingDots"></span>
+    </div>
+
+    <form id="chatForm" class="chat-input" autocomplete="off" aria-label="Send message form">
+      <input 
+        type="text" 
+        id="messageInput" 
+        placeholder="Type a message..." 
+        aria-label="Message input"
+        required
+        autocomplete="off"
+      />
+      <input type="file" id="imageInput" accept="image/*" style="display:none" aria-hidden="true" />
+      <button type="submit" id="sendBtn" aria-label="Send message">Send</button>
+    </form>
+
+    <div id="emojiPicker" class="emoji-picker" role="list" aria-label="Emoji picker" hidden>
+      <span role="listitem">😀</span> <span role="listitem">😃</span> <span role="listitem">😄</span> <span role="listitem">😁</span> <span role="listitem">😆</span> <span role="listitem">😅</span> <span role="listitem">😂</span> <span role="listitem">😊</span> <span role="listitem">😇</span> <span role="listitem">🙂</span> <span role="listitem">🙃</span> <span role="listitem">😉</span> <span role="listitem">😍</span> <span role="listitem">😘</span> <span role="listitem">😜</span> <span role="listitem">🤔</span> <span role="listitem">🤗</span> <span role="listitem">🤩</span> <span role="listitem">🤖</span>
+    </div>
+
+    <div id="stickerPicker" class="sticker-picker" role="list" aria-label="Sticker picker" hidden>
+      <img src="https://i.imgur.com/1V4m6Wf.png" alt="Sticker 1" role="listitem" tabindex="0" />
+      <img src="https://i.imgur.com/0XxpDJ5.png" alt="Sticker 2" role="listitem" tabindex="0" />
+      <img src="https://i.imgur.com/xvXjq5x.png" alt="Sticker 3" role="listitem" tabindex="0" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
